@@ -1,0 +1,159 @@
+🌍 COUNTRY-BASED SYSTEM (VERY IMPORTANT)
+
+Each user belongs to ONE country permanently
+
+Each task (tag) belongs to ONE country
+
+Admin chooses the country when creating a task
+
+Users can ONLY see tasks assigned to their country
+
+Users from other countries must NOT see those tasks
+
+🔗 SMART LINK & TASK SYSTEM (CRITICAL)
+Smart Link Rules
+
+Admin will use ONE OGAds smart link per country
+
+Example: USA Smart Link
+
+That single smart link contains multiple offers/surveys inside OGAds
+
+Task (Tag) Logic
+
+Admin can create MULTIPLE TAGS using the same smart link
+
+Example:
+
+Tag 1 → USA Smart Link
+
+Tag 2 → USA Smart Link
+
+Tag 3 → USA Smart Link
+
+Each tag represents a new opportunity to complete a different offer inside OGAds.
+
+Task Completion Rules
+
+When user clicks a tag:
+
+Redirect to OGAds smart link
+
+When user returns:
+
+DO NOT auto-credit
+
+Wait for OGAds postback
+
+If OGAds confirms completion:
+
+Mark tag as COMPLETED
+
+Credit user balance
+
+Completed tag:
+
+Must be locked
+
+User can NEVER complete it again
+
+If user fails or abandons a tag:
+
+No credit
+
+User can try another tag
+
+Each new tag should trigger different offers
+
+Prevent offer repetition for completed tags
+
+🔁 POSTBACK SYSTEM (MANDATORY)
+
+Implement OGAds postback URL
+
+Postback must:
+
+Identify user
+
+Identify tag
+
+Credit balance
+
+Lock completed task
+
+Prevent duplicate postbacks
+
+Secure postback with validation
+
+🧑‍💼 ADMIN PANEL REQUIREMENTS
+Admin Authentication
+
+Secure admin login
+
+Separate from user login
+
+User Management
+
+Admin can:
+
+View users grouped by country
+
+Filter users by country
+
+See:
+
+Username
+
+Country
+
+Balance
+
+Status
+
+Registration date
+
+Task (Tag) Management
+
+Admin can:
+
+Create tasks
+
+Assign:
+
+Country
+
+Smart link
+
+Reward amount
+
+Enable / disable tasks
+
+See completed task logs
+
+Country Settings
+
+Admin can:
+
+Manage countries
+
+Assign smart links per country
+
+Control availability of tasks per country
+
+📢 ANNOUNCEMENT SYSTEM
+
+Admin can:
+
+Create announcements
+
+Edit announcements
+
+Delete announcements
+
+Announcements appear on user dashboard
+
+Can be:
+
+Global
+
+Country-specific

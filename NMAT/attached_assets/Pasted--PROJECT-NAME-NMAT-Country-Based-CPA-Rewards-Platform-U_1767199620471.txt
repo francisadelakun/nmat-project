@@ -1,0 +1,284 @@
+📌 PROJECT NAME
+
+NMAT – Country-Based CPA Rewards Platform (USDT Only)
+
+📌 TECH STACK (MANDATORY)
+
+Backend: PHP (Procedural or PDO)
+
+Database: MySQL
+
+Frontend: HTML, CSS (Bootstrap), JavaScript
+
+No frameworks (NO Laravel, NO React)
+
+📌 PROJECT OVERVIEW
+
+Build a CPA rewards-to-earn website where users earn money by completing offers (tags/tasks).
+The platform must be country-based, smart-link driven, postback-enabled, and secure.
+
+🔐 USER SYSTEM REQUIREMENTS
+1️⃣ User Registration
+
+User must register with:
+
+Username
+
+Email
+
+Password
+
+Country (from full country list)
+
+Phone number
+
+Country & Phone Logic
+
+User must select a country
+
+When a country is selected:
+
+Phone input must automatically show the correct country dialing code
+
+USA → +1
+
+UK → +44
+
+Nigeria → +234
+
+etc.
+
+Phone format must update dynamically based on selected country
+
+Anti-Fraud Rules
+
+One account per user
+
+Block duplicate accounts using:
+
+Email
+
+IP address
+
+2️⃣ Login & User Dashboard
+
+After login, user should see:
+
+Available tasks (only for their country)
+
+Completed tasks
+
+Balance
+
+Country
+
+Announcements
+
+Withdrawal page
+
+🌍 COUNTRY-BASED SYSTEM (VERY IMPORTANT)
+
+Each user belongs to ONE country permanently
+
+Each task (tag) belongs to ONE country
+
+Admin chooses the country when creating a task
+
+Users can ONLY see tasks assigned to their country
+
+Users from other countries must NOT see those tasks
+
+🔗 SMART LINK & TASK SYSTEM (CRITICAL)
+Smart Link Rules
+
+Admin will use ONE OGAds smart link per country
+
+Example: USA Smart Link
+
+That single smart link contains multiple offers/surveys inside OGAds
+
+Task (Tag) Logic
+
+Admin can create MULTIPLE TAGS using the same smart link
+
+Example:
+
+Tag 1 → USA Smart Link
+
+Tag 2 → USA Smart Link
+
+Tag 3 → USA Smart Link
+
+Each tag represents a new opportunity to complete a different offer inside OGAds.
+
+Task Completion Rules
+
+When user clicks a tag:
+
+Redirect to OGAds smart link
+
+When user returns:
+
+DO NOT auto-credit
+
+Wait for OGAds postback
+
+If OGAds confirms completion:
+
+Mark tag as COMPLETED
+
+Credit user balance
+
+Completed tag:
+
+Must be locked
+
+User can NEVER complete it again
+
+If user fails or abandons a tag:
+
+No credit
+
+User can try another tag
+
+Each new tag should trigger different offers
+
+Prevent offer repetition for completed tags
+
+🔁 POSTBACK SYSTEM (MANDATORY)
+
+Implement OGAds postback URL
+
+Postback must:
+
+Identify user
+
+Identify tag
+
+Credit balance
+
+Lock completed task
+
+Prevent duplicate postbacks
+
+Secure postback with validation
+
+🧑‍💼 ADMIN PANEL REQUIREMENTS
+Admin Authentication
+
+Secure admin login
+
+Separate from user login
+
+User Management
+
+Admin can:
+
+View users grouped by country
+
+Filter users by country
+
+See:
+
+Username
+
+Country
+
+Balance
+
+Status
+
+Registration date
+
+Task (Tag) Management
+
+Admin can:
+
+Create tasks
+
+Assign:
+
+Country
+
+Smart link
+
+Reward amount
+
+Enable / disable tasks
+
+See completed task logs
+
+Country Settings
+
+Admin can:
+
+Manage countries
+
+Assign smart links per country
+
+Control availability of tasks per country
+
+📢 ANNOUNCEMENT SYSTEM
+
+Admin can:
+
+Create announcements
+
+Edit announcements
+
+Delete announcements
+
+Announcements appear on user dashboard
+
+Can be:
+
+Global
+
+Country-specific
+
+💰 WITHDRAWAL SYSTEM (USDT ONLY)
+Withdrawal Rules
+
+ONLY USDT withdrawals
+
+No PayPal
+
+No bank transfer
+
+No gift cards
+
+Minimum Withdrawal
+
+Minimum withdrawal amount: 20 USDT
+
+User cannot request withdrawal if balance < 20 USDT
+
+Withdrawal Details
+
+User must enter:
+
+USDT wallet address
+
+Network (e.g. TRC20 / ERC20 – admin configurable)
+
+Admin can:
+
+Approve withdrawal
+
+Reject withdrawal
+
+Withdrawal history must be stored
+
+🔐 SECURITY REQUIREMENTS
+
+Use prepared statements / escaping
+
+Prevent SQL injection
+
+Prevent duplicate task completion
+
+Lock completed tags permanently
+
+Clean folder structure
+
+Well-commented code
